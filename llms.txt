@@ -1,0 +1,20 @@
+# Camera Whiteboard
+
+> Windows 11 x64 desktop whiteboard that overlays mouse-drawn diagrams on live webcam video and exposes a Media Foundation virtual camera. English interface. Local processing. No OBS dependency.
+
+## Entry points
+- [README](README.md): purpose, installation, source build, tests and packaging.
+- [Architecture](docs/ARCHITECTURE.md): actual frame pipeline, paths and known boundaries.
+- [Contributing](CONTRIBUTING.md): focused changes, behavioral testing and evidence requirements.
+- [User guide](packaging/USER_GUIDE.md): installation and UI behavior.
+- [Validation](validation/release-2026-10-27.md): current verification scope; historical notes may include Chinese.
+
+## Code map
+- ui/camera_whiteboard: Python/PySide6 drawing, capture, composition and publication.
+- third_party/vcamsample/VCamSampleSource: active native C++ media source.
+- packaging: PyInstaller configuration, install/uninstall and component licenses.
+- scripts/export_release.py: clean source and application bundle export.
+- tests/ui: test discovery root.
+
+## Contracts
+Outgoing video is 1280x720; the board sheet is 4:3. Panel position is independent of content mirroring. Hiding the sheet keeps video running. The native source must not depend on Python/Qt. Direct DLL tests are not remote meeting validation. Shared-frame snapshot consistency and camera reconnect recovery remain open work.

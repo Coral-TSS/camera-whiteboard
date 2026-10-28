@@ -1,0 +1,18 @@
+# 与 MSVC 默认风格一致，供本地格式化使用。
+# 注意：third_party/ 下的上游代码不要格式化，保持原样以便比对。
+BasedOnStyle: Microsoft
+Language: Cpp
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 120
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+PointerAlignment: Left
+ReferenceAlignment: Left
+DerivePointerAlignment: false
+SortIncludes: CaseSensitive
+IncludeBlocks: Preserve
+AccessModifierOffset: -4
+NamespaceIndentation: None

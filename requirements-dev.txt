@@ -1,0 +1,9 @@
+# 开发期依赖：Python 侧工具 + 构建工具
+-r requirements.txt
+
+# 构建工具（也可改用 Visual Studio Build Tools 自带的 4.3.1，见 scripts/env.*）
+cmake==4.4.4
+opencv-python-headless>=5.0
+imageio-ffmpeg>=0.6
+
+pyinstaller==6.22.3

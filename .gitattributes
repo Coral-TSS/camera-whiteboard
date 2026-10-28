@@ -1,0 +1,20 @@
+# 统一换行符策略
+# 不要给 * 设置 eol，否则会覆盖下面的 -text（eol 属性等于隐式开启换行转换）
+* text=auto
+
+# Windows 脚本必须是 CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制
+*.png binary
+*.ico binary
+*.jpg binary
+*.dll binary
+*.lib binary
+*.exe binary
+
+# vendored 上游代码保持原样，禁止任何换行转换（含 .sln/.vcxproj/图标）
+# 注意：必须同时取消 text 与 eol，否则 eol=lf 仍会触发归一化
+third_party/** -text -eol

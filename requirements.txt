@@ -1,0 +1,4 @@
+# 运行期依赖（界面层）
+PySide6==6.12.0
+opencv-python-headless>=5.0
+imageio-ffmpeg>=0.6
